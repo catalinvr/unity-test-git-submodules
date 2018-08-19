@@ -1,0 +1,1 @@
+mklink /J DummyProject\Assets\com.company.product_2 submodules\unity-sample-project\SampleProject\Assets\com.company.product
