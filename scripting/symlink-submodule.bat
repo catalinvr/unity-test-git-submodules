@@ -43,14 +43,14 @@ GOTO :EOF
 ECHO %GitignoreFile%
 ECHO %1
 REM SET a=%1%|%~nx1
-SET a=""
-call :extract %1 %a
+SET Filename=""
+call :extractFilename %1 %Filename%
 FINDSTR %a%/* %GitignoreFile%
 IF %errorlevel% EQU 0 GOTO :EOF 
 ECHO %1/* >> %GitignoreFile%
 ECHO !%1/.keep >> %GitignoreFile%
 GOTO :EOF
 
-:extract
+:extractFilename
 SET %2=%~nx1
 GOTO :EOF
