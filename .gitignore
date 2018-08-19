@@ -34,3 +34,9 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+
+
+# Ignore everything in symlinked folders except for .keep files
+DummyProject/Assets/com.company.product_2/*
+!DummyProject/Assets/com.company.product_2/.keep
