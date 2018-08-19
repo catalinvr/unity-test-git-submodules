@@ -5,8 +5,8 @@ call %~dp0\config.bat
 SET GitRepository=%1
 SET ProjectName=%2
 
-IF [%SubmoduleSource%] == [] GOTO :missingRepository
-IF [%SubmoduleTarget%] == [] GOTO :missingProjectName
+IF [%GitRepository%] == [] GOTO :missingRepository
+IF [%ProjectName%] == [] GOTO :missingProjectName
 
 SET CurrentDirectory=%cd%
 CD /D %SubmodulesRoot%
