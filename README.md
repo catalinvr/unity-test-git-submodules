@@ -48,3 +48,11 @@ There is still another problem to solve. How can those files be identified by ot
 Submodules will be placed outside of the current projects Assets folder. Their content is sym-linked into subfolders, which are already prepared in the Assets folder. Those folders must be identifiable and mentioned in .gitignore files. Shell and Batch scripts could take care of creating a couple of symlinks. The main advantage is, that users can manually remove symlinks, if they are certain, that some content will never be used to build their current project.
 
 That sounds like a solution worth evaluating!
+
+## Final Thoughts
+
+The proposed way seems to work. Users can checkout submodules and modify files within other projects. Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in all of your shared projects.
+
+> Cause there are so many possible situations were users create empty folders, I think each folder should get its own .keep file right from the beginning. This will prevent warnings to show up in Unity.
+
+> Please note that there is still a minor problem when .gitignore files are updated by one of my batch files. I will try to fix that in the next few days.
