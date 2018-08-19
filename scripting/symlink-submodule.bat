@@ -46,8 +46,8 @@ SET Filename=""
 call :extractFilename %1 %Filename
 FINDSTR %Filename% %GitignoreFile%
 IF %errorlevel% EQU 0 GOTO :EOF 
-ECHO %1/* >> %GitignoreFile%
-ECHO !%1/.keep >> %GitignoreFile%
+ECHO %1\* >> %GitignoreFile%
+ECHO !%1\.keep >> %GitignoreFile%
 GOTO :EOF
 
 :extractFilename
