@@ -30,12 +30,14 @@ That sounds like a solution worth evaluating!
 
 ## Final Thoughts
 
-The proposed way seems to work. Users can checkout submodules and modify files within other projects. Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in all of your shared projects.
+The proposed way seems to work. Users can checkout submodules and modify files within other projects. Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in all shared projects.
 
-> Cause there are so many possible situations were users create empty folders, I think each folder within Assets should get its own .keep file right from the beginning.
+![Achieved project structure](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/res/umlet/final-directory-structure.png)
 
 ### About Git
-.gitignore requires forward slashes But the provided batch files require paths containing backslashes. To convert strings, one can use the following command:
+- Git does not add empty folders, but Unity adds a .meta file for each folder on creation. When other team members are checking out the repository for the first time, Unity will complain about .meta files having no relation to any existing folder. Cause there are so many possible situations were users create empty folders, I think each folder within Assets should get its own .keep file right from the beginning. 
+
+- .gitignore requires forward slashes But the provided batch files require paths containing backslashes. To convert strings, one can use the following command:
 
 ```batch
 SET MyVar=%MyVar:\=/%
