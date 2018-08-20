@@ -2,7 +2,7 @@
 Repository to evaluate strategies in terms of sharing code by using git submodules
 
 ## Abstract
-Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks and makes sure that gitignore files are kept up-to-date over the entire lifetime of projects and that existing files from one repository will not be accidentally duplicated into other repositories.
+Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks and makes sure that gitignore files are kept up-to-date over the entire lifetime of projects. An additional mechanism prevents users from accidentally duplicating existing files into other repositories
 
 ## Related Work
 - [Symbolic links from submodules to plugins folder](http://prime31.github.io/A-Method-for-Working-with-Shared-Code-with-Unity-and-Git/)
@@ -45,12 +45,13 @@ The proposed workflow can be summarized in four steps:
     - remove submodule (including .keep file)
     - update .git/modules/submodules folder
     - update .gitmodules file
-
-## Final Thoughts
-
-The proposed way seems to work. Users can checkout submodules and modify files within other projects.
+    
+## Result
+After executing step 1 and 2, users are enabled to checkout submodules and modify files within other projects. The obtained project structure should look similar to this:
 
 ![Achieved project structure](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/res/umlet/final-directory-structure.png)
+
+## Final Thoughts
 
 ### About Unity 
 - Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in all shared projects.
