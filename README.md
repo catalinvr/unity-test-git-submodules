@@ -2,14 +2,11 @@
 Repository to evaluate strategies in terms of sharing code by using git submodules
 
 ## Abstract
-Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks and makes sure that gitignore files are kept up-to-date over the entire lifetime of projects and that existing files from one repository will not be accidentally duplicated into another repository.
+Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks and makes sure that gitignore files are kept up-to-date over the entire lifetime of projects and that existing files from one repository will not be accidentally duplicated into other repositories.
 
 ## Related Work
 - [Symbolic links from submodules to plugins folder](http://prime31.github.io/A-Method-for-Working-with-Shared-Code-with-Unity-and-Git/)
 - [Sparse checkouts](https://medium.com/@andybak_95963/neater-unity-2018-projects-with-git-submodules-and-sparse-checkout-3294e626a6f9)
-
-### Further reading:
-- [Gitattributes/Callapsing diffs](https://robots.thoughtbot.com/how-to-git-with-unity)
 
 ## Assumptions
 <details>
@@ -32,11 +29,31 @@ That sounds like a solution worth evaluating!
 
 </details>
 
+## Implementation/Usage
+The proposed workflow can be summarized in four steps:
+
+1. [Add submodule to project](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/scripting/add-submodule.bat) 
+    - update .gitmodules file
+2. [Use submodule in Unity](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/scripting/symlink-submodule.bat)
+    - create symlinks between submodule and Assets folder
+    - create .keep files within submodule
+    - update .gitignore file (ignore all files in submodule except for .keep file)
+3. [Stop using submodule in Unity](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/scripting/unlink-submodule.bat) 
+    - remove symlinks within Assets folder
+    - update .gitignore file (ignore no files in submodule)
+4. [Remove submodule from project](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/scripting/remove-submodule.bat) 
+    - remove submodule (including .keep file)
+    - update .git/modules/submodules folder
+    - update .gitmodules file
+
 ## Final Thoughts
 
-The proposed way seems to work. Users can checkout submodules and modify files within other projects. Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in all shared projects.
+The proposed way seems to work. Users can checkout submodules and modify files within other projects.
 
 ![Achieved project structure](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/res/umlet/final-directory-structure.png)
+
+### About Unity 
+- Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in all shared projects.
 
 ### About Git
 - Git does not add empty folders, but Unity adds a .meta file for each folder on creation. When other team members are checking out the repository for the first time, Unity will complain about .meta files having no relation to any existing folder. Cause there are so many possible situations were users create empty folders, I think each folder within Assets should get its own .keep file right from the beginning. 
@@ -45,3 +62,6 @@ The proposed way seems to work. Users can checkout submodules and modify files w
 ```batch
 SET MyVar=%MyVar:\=/%
 ```
+
+## Further reading:
+- [Gitattributes/Callapsing diffs](https://robots.thoughtbot.com/how-to-git-with-unity)
