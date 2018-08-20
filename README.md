@@ -18,28 +18,7 @@ While reading some threads and blog posts about the mentioned problem, I had an 
 
 There is still another problem to solve. How can those files be identified by other users. The first thing I came up with, is the creation of project-related folders in each of Unity's special folders. The result could look like this:
 
-- Assets
-    - com.company.product-1
-        - Animation
-        - Audio
-        - ...
-        - Editor
-        - ...
-        - Resources
-        - ...
-    - com.company.product-2
-        - ...
-    - Editor Default Resources
-        - com.company.product-1
-            - ...
-        - com.company.product-2
-    - Gizmos
-        - com.company.product-1
-        - com.company.product-2
-    - Plugins
-        - com.company.product-1
-        - com.company.product-2
-    - Standard Assets
+![Sample content in Assets folder](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/res/umlet/sample-directory-structure.png)
 
 ### Update
 
