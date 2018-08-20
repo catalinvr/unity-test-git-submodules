@@ -1,11 +1,14 @@
 # unity-test-git-submodules
 Repository to evaluate strategies in terms of sharing code by using git submodules
 
-## Existing Strategies
+## Abstract
+Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks and makes sure that gitignore files are kept up-to-date over the entire lifetime of projects and that existing files from one repository will not be accidentally duplicated into another repository.
+
+## Related Work
 - [Symbolic links from submodules to plugins folder](http://prime31.github.io/A-Method-for-Working-with-Shared-Code-with-Unity-and-Git/)
 - [Sparse checkouts](https://medium.com/@andybak_95963/neater-unity-2018-projects-with-git-submodules-and-sparse-checkout-3294e626a6f9)
 
-Further reading:
+### Further reading:
 - [Gitattributes/Callapsing diffs](https://robots.thoughtbot.com/how-to-git-with-unity)
 
 ## Assumptions
