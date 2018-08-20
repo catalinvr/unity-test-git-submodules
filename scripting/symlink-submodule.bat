@@ -41,13 +41,16 @@ GOTO :EOF
 
 :ignoreFilesInDirectory
 ECHO %GitignoreFile%
-ECHO %1
+SET FILEPATH=%1
 SET Filename=""
-call :extractFilename %1 %Filename
+call :extractFilename %FILEPATH% %Filename
 FINDSTR %Filename% %GitignoreFile%
 IF %errorlevel% EQU 0 GOTO :EOF 
-ECHO %1\* >> %GitignoreFile%
-ECHO !%1\.keep >> %GitignoreFile%
+
+REM Convert backslashes to forward slashes, because of git 
+SET FILEPATH=%FILEPATH:\=/%
+ECHO %FILEPATH%/* >> %GitignoreFile%
+ECHO !%FILEPATH%/.keep >> %GitignoreFile%
 GOTO :EOF
 
 :extractFilename
