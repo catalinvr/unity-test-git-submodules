@@ -7,6 +7,7 @@ Git submodules allow sharing files between projects. But using them in Unity pro
 ## Related Work
 - [Symbolic links from submodules to plugins folder](http://prime31.github.io/A-Method-for-Working-with-Shared-Code-with-Unity-and-Git/)
 - [Sparse checkouts](https://medium.com/@andybak_95963/neater-unity-2018-projects-with-git-submodules-and-sparse-checkout-3294e626a6f9)
+- [Assembly Definition Files](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html)
 
 ## Assumptions
 <details>
@@ -63,6 +64,9 @@ After executing step 1 and 2, users are enabled to checkout submodules and modif
 ```batch
 SET MyVar=%MyVar:\=/%
 ```
+
+### About Assembly Definition Files
+- The use of assembly definition files must be still evaluated!
 
 ## Further reading:
 - [Gitattributes/Callapsing diffs](https://robots.thoughtbot.com/how-to-git-with-unity)
