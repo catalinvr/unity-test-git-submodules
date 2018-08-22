@@ -85,3 +85,7 @@ sysinfo.txt
 
 
 # Ignore everything in symlinked folders except for .keep files
+DummyProject/Assets/com.company.product/* 
+!DummyProject/Assets/com.company.product/.keep 
+Default/* 
+!Default/.keep 
