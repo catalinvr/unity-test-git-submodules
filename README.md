@@ -67,6 +67,7 @@ SET MyVar=%MyVar:\=/%
 
 ### About Assembly Definition Files
 - The use of assembly definition files must be still evaluated!
+- One major question to answer is, if assembly definition files should be shared or not. Right now, I would say yes. Not sharing them should not bring any advantages. And modifying or replacing them would result in maintaining another branch for each submodule. 
 
 ## Further reading:
 - [Gitattributes/Callapsing diffs](https://robots.thoughtbot.com/how-to-git-with-unity)
