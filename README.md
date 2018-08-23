@@ -31,7 +31,7 @@ That sounds like a solution worth evaluating!
 </details>
 
 ## Implementation/Usage
-The proposed workflow can be summarized in four steps:
+The proposed workflow can be summarized into four steps:
 
 1. [Add submodule to project](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/scripting/add-submodule.bat) 
     - update .gitmodules file
@@ -55,7 +55,7 @@ After executing step 1 and 2, users are enabled to checkout submodules and modif
 ## Final Thoughts
 
 ### About Unity 
-- Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in all shared projects.
+- Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in shared projects.
 
 ### About Git
 - Git does not add empty folders, but Unity adds a .meta file for each folder on creation. When other team members are checking out the repository for the first time, Unity will complain about .meta files having no relation to any existing folder. Cause there are so many possible situations were users create empty folders, I think each folder within Assets should get its own .keep file right from the beginning. 
