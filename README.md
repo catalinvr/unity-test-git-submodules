@@ -1,6 +1,13 @@
 # unity-test-git-submodules
 Repository to evaluate strategies in terms of sharing code by using git submodules
 
+```diff
+- Important Note: On windows, do not create symlinks, as stated below.
+- Instead create shortcuts!
+- When shortcuts are added/staged for the next commit, git will automatically add a .lnk file as placeholder.
+- When cloning repositories containing .lnk files, git will automatically try to restore shortcuts.
+```
+
 ## Abstract
 Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks and makes sure that gitignore files are kept up-to-date over the entire lifetime of projects. An additional mechanism prevents users from accidentally duplicating existing files into other repositories
 
