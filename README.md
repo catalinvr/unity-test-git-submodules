@@ -48,7 +48,7 @@ The proposed workflow can be summarized into four steps:
     - update .gitmodules file
     
 ## Observations
-[Github for Unity](https://unity.github.com/) shows local changes in submodules, but neither committing nor pushing files inside submodules is possible in version 1.0.0.
+[Github for Unity](https://unity.github.com/) shows local changes in submodules, but neither committing nor pushing files inside submodules is possible in version 1.0.0 and version 1.0.2. Additional note: Stashing files via the editor window does not seem to be supported. Unfortunately pulling from remote is only possible when everything which has changed was committed or reverted. That means working in teams on the same branch plus committing subsets of changed files becomes more difficult.
 
 Repositories can be added multiple times as submodules with different names. So working with multiple branches at once, seems to be possible. But linking folders into the Assets folder becomes more difficult. There are much more situations for collisions, e.g. occurence of scripts with the same name and the same namespace.
 
