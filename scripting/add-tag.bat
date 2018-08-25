@@ -4,13 +4,15 @@ SET Submodule=submodules\%1
 SET Project=%2
 SET TAG=%Project%-%3
 SET Message="Used as submodule in %Project%"
+SET Branch=submodule-%Project%
 
 SET CurrentDirectory=%cd%
 
 CD %Submodule%
 
-REM git checkout -b submodule-%Project%
-REM git tag -a %TAG% -m %Message%
-REM git push origin %TAG%
+git checkout -b %Branch%
+git tag -a %TAG% -m %Message%
+git push --set-upstream origin %Branch%
+git push origin %TAG%
 
 CD %CurrentDirectory%
