@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLHierarchy</id>
     <coordinates>
-      <x>250</x>
-      <y>110</y>
-      <w>500</w>
-      <h>1200</h>
+      <x>0</x>
+      <y>14</y>
+      <w>350</w>
+      <h>840</h>
     </coordinates>
     <panel_attributes>type=Package
 root
@@ -52,22 +52,23 @@ root
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>310</y>
-      <w>170</w>
-      <h>580</h>
+      <x>231</x>
+      <y>154</y>
+      <w>112</w>
+      <h>406</h>
     </coordinates>
-    <panel_attributes>lt=.&gt;
-&lt;&lt;symlink&gt;&gt;</panel_attributes>
+    <panel_attributes>lt=&lt;.
+windows
+shortcut</panel_attributes>
     <additional_attributes>40.0;560.0;90.0;560.0;90.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLHierarchy</id>
     <coordinates>
-      <x>800</x>
-      <y>110</y>
-      <w>500</w>
-      <h>980</h>
+      <x>385</x>
+      <y>14</y>
+      <w>350</w>
+      <h>686</h>
     </coordinates>
     <panel_attributes>type=Package
 Assets
@@ -100,6 +101,300 @@ Assets
 	Streaming Assets
 		com.company.product_1
 		com.company.product_2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>903</x>
+      <y>70</y>
+      <w>280</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+Create Remote-Repository Repository
+- let your service to create a README.md file for you
+- let your service to create a .gitignore file for you
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>903</x>
+      <y>133</y>
+      <w>280</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+Clone Repository
+- command: git clone -c core.symlinks=true &lt;URL&gt;
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>903</x>
+      <y>329</y>
+      <w>280</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+Create New Unity Project
+- inside Unity navigate into Edit &gt; Project Settings &gt; Editor
+- set Mode for Version Control to "Visible .meta files"
+- set Mode for Asset Serialization to "Force Text"
+- commit and push changes
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>903</x>
+      <y>413</y>
+      <w>280</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+Add Git Submodule
+- command: git submodule add &lt;URL&gt; &lt;NAME&gt;
+- checkout new branch inside submodule
+- add tag
+- commit and push changes made in submodule
+- commit and push changes
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>903</x>
+      <y>182</y>
+      <w>280</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+Extend .gitignore
+- ignore specific files created by Unity
+- ignore specific files created by Rider
+- ...
+- commit and push changes
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>903</x>
+      <y>266</y>
+      <w>280</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+Add .gitattributes
+- change configuration for Git LFS
+- commit and push changes
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>903</x>
+      <y>511</y>
+      <w>280</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+Add Shortcuts
+- inside Windows Explorer navigate into Assets folder
+- press right mouse button
+- create new shortcut pointing to selected folder in submodule
+- commit and push changes 
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>1029</x>
+      <y>35</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=initial
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>42</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>105</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>154</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>238</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>301</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>385</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>483</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>567</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>1022</x>
+      <y>595</y>
+      <w>28</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>type=decision
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>616</y>
+      <w>147</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+all dependencies are resolved
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>1029</x>
+      <y>644</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=final
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1043</x>
+      <y>448</y>
+      <w>231</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+more
+dependencies
+must
+be 
+resolved
+group=1</panel_attributes>
+    <additional_attributes>10.0;230.0;230.0;230.0;230.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>805</x>
+      <y>21</y>
+      <w>476</w>
+      <h>658</h>
+    </coordinates>
+    <panel_attributes>fg=white
+group=1</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
