@@ -2,10 +2,10 @@
 Repository to evaluate strategies in terms of sharing code by using git submodules
 
 ```diff
-- Important Note: On windows, do not create symlinks, as stated below.
-- Instead create shortcuts!
-- When shortcuts are added/staged for the next commit, git will automatically add a .lnk file as placeholder.
-- When cloning repositories containing .lnk files, git will automatically try to restore shortcuts.
+- Important Note:
+- The proposed workflow is currently reworked!
+- Uniy and Rider can resolve symlinks but not windows shortcuts
+- Git can restore shortcuts when checking out the repo on another machine, but not symlinks
 ```
 
 ## Abstract
