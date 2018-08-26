@@ -6,6 +6,7 @@ Repository to evaluate strategies in terms of sharing code by using git submodul
 - The proposed workflow is currently reworked!
 - Uniy and Rider can resolve symlinks but not windows shortcuts
 - Git can restore shortcuts when checking out the repo on another machine, but not symlinks
+- The best solution right now, seems to manually symlink folders again on each machine checking a repository including submodules
 ```
 
 ## Abstract
