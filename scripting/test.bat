@@ -1,8 +1,8 @@
-REM Step 1 - add submodule
-scripting\add-submodule https://github.com/lars-wobus/unity-sample-project unity-sample-project
+:: Step 1 - add submodule
+scripting\add-submodule https://github.com/lars-wobus/unity-sample-project
 
-REM Step 2 - connect submodule with project
-REM scripting\symlink-submodule submodules\unity-sample-project\SampleProject\Assets\com.company.product DummyProject\Assets\com.company.product_2
+::  Step 2 - connect submodule with project
+::  scripting\symlink-submodule submodules\unity-sample-project\SampleProject\Assets\com.company.product DummyProject\Assets\com.company.product
 
 set SourceDNS=com.company.product
 set TargetDNS=com.company.product
@@ -31,8 +31,8 @@ scripting\symlink-submodule %SubmoduleAssetsPath%\%folder[2]%\%subfolder[3]%\%So
 scripting\symlink-submodule %SubmoduleAssetsPath%\%folder[3]%\%SourceDNS% %ProjectPath%\%folder[3]%\%TargetDNS%
 scripting\symlink-submodule %SubmoduleAssetsPath%\%folder[4]%\%SourceDNS% %ProjectPath%\%folder[4]%\%TargetDNS%
 
-REM Step 3 - disconnect submodule with project
-REM scripting\unlink-submodule DummyProject\Assets\com.company.product_2
+::  Step 3 - disconnect submodule with project
+::  scripting\unlink-submodule DummyProject\Assets\com.company.product
 scripting\unlink-submodule %ProjectPath%\%TargetDNS%
 
 scripting\unlink-submodule %ProjectPath%\%folder[0]%\%TargetDNS%
@@ -41,13 +41,13 @@ scripting\unlink-submodule %ProjectPath%\%folder[2]%\%TargetDNS%
 scripting\unlink-submodule %ProjectPath%\%folder[3]%\%TargetDNS%
 scripting\unlink-submodule %ProjectPath%\%folder[4]%\%TargetDNS%
 
-REM Step 4 - remove submodule
+::  Step 4 - remove submodule
 scripting\remove-submodule unity-sample-project
 
 
-REM Tip: If you see something like this:
-REM 'submodules\unity-sample-project' already exists in the index”
-REM then check if the folder is already staged:
-REM git ls-files --stage submodules
-REM If that is true, then execute the following:
-REM git rm --cached submodules\unity-sample-project
+::  Tip: If you see something like this:
+::  'submodules\unity-sample-project' already exists in the index”
+::  then check if the folder is already staged:
+::  git ls-files --stage submodules
+::  If that is true, then execute the following:
+::  git rm --cached submodules\unity-sample-project
