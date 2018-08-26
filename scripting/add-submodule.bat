@@ -4,20 +4,21 @@
 :: Extract %SubmodulesPath% from config
 CALL %~dp0\config.bat
 
-:: Save input arguments
-SET GitRepository=%1
-SET ProjectName=""
-
-:: Check if arguments are set
+:: Save input argument
+SET RemoteRepositoryUrl=%1
 IF [%GitRepository%] == [] GOTO :MissingArgumentException
-::IF [%ProjectName%] == [] CALL :MissingArgumentException "Second argument must define a project name. For instance: unity-sample-project".
 
-CALL :ExtractFilename %GitRepository% %ProjectName
+:: Extract project name
+SET ProjectName=""
+CALL :ExtractFilename %RemoteRepositoryUrl% %ProjectName
+SET LocalPath=%SubmodulePath%\%ProjectName%
 
 @ECHO ON
 
 :: Add submodule
-git submodule add %GitRepository% %SubmodulesPath%/%ProjectName%
+git submodule add %RemoteRepositoryUrl% %LocalPath%
+
+@ECHO OFF
 
 :: End on successful execution
 GOTO :EOF

@@ -1,14 +1,15 @@
-REM Example: scripting\remove-submodule unity-sample-project
+:: Example: scripting\remove-submodule unity-sample-project
 
-call %~dp0\config.bat
+CALL %~dp0\config.bat
 
-SET GitSubmodule=%1
+SET ProjectName=%1
+SET LocalPath=%SubmodulePath%\%ProjectName%
 
-REM Remove the submodule entry from .git/config
-git submodule deinit -f -- %SubmodulesFoldername%\%GitSubmodule%
+:: Remove entry from .git/config
+git submodule deinit -f -- %LocalPath%
 
-REM Remove the submodule directory from the superproject's .git/modules directory
-rmdir /s /q .git\modules\%SubmodulesFoldername%\%GitSubmodule%
+:: Remove directory from the superproject's .git/modules directory
+rmdir /s /q .git\modules\%LocalPath%
 
-REM Remove the entry in .gitmodules and remove the submodule directory located at path/to/submodule
-git rm -f %SubmodulesFoldername%\%GitSubmodule%
+:: Remove entry in .gitmodules and remove the submodule directory located at path/to/submodule
+git rm -f %LocalPath%
