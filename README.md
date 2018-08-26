@@ -11,11 +11,6 @@ Repository to evaluate strategies in terms of sharing code by using git submodul
 ## Abstract
 Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks and makes sure that gitignore files are kept up-to-date over the entire lifetime of projects. An additional mechanism prevents users from accidentally duplicating existing files into other repositories
 
-## Related Work
-- [Symbolic links from submodules to plugins folder](http://prime31.github.io/A-Method-for-Working-with-Shared-Code-with-Unity-and-Git/)
-- [Sparse checkouts](https://medium.com/@andybak_95963/neater-unity-2018-projects-with-git-submodules-and-sparse-checkout-3294e626a6f9)
-- [Assembly Definition Files](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html)
-
 ## Implementation/Usage
 The proposed workflow can be summarized into four steps:
 
@@ -65,6 +60,3 @@ SET MyVar=%MyVar:\=/%
 > It is highly recommended that you use assembly definition files for all the scripts in the Project, or not at all. Otherwise, the scripts that are not using assembly definition files always recompile every time an assembly definition file recompiles. This reduces the benefit of using assembly definition files.
 >
 > &mdash; <cite>[docs.unity3d.com](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html)</cite>
-
-## Further reading:
-- [Gitattributes/Callapsing diffs](https://robots.thoughtbot.com/how-to-git-with-unity)
