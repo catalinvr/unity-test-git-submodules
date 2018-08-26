@@ -2,14 +2,18 @@
 
 CALL %~dp0\config.bat
 
-SET ProjectName=%1
-SET LocalPath=%SubmodulePath%\%ProjectName%
+SET GitSubmodule=%1
+SET PathWithBackslash=%SubmodulesFoldername%\%GitSubmodule%
+SET PathWithSlash=%PathWithBackslash:\=/%
 
-:: Remove entry from .git/config
-git submodule deinit -f -- %LocalPath%
+:: Remove the submodule entry from .git/config
+git submodule deinit -f -- %PathWithSlash%
 
-:: Remove directory from the superproject's .git/modules directory
-rmdir /s /q .git\modules\%LocalPath%
+:: Remove the submodule directory from the superproject's .git/modules directory
+rmdir /s /q .git\modules\%PathWithBackslash%
 
-:: Remove entry in .gitmodules and remove the submodule directory located at path/to/submodule
-git rm -f %LocalPath%
+:: Remove the entry in .gitmodules and remove the submodule directory located at path/to/submodule
+git rm -f %PathWithSlash%
+
+:: If the submodule cannot be removed completely or if you removed some parts by hand
+:: check follow these instructions https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule
