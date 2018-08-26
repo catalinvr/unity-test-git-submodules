@@ -40,16 +40,3 @@ After executing step 1 and 2, users are enabled to checkout submodules and modif
 ```
 
 ![Achieved project structure](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/res/umlet/final-directory-structure.png)
-
-## Final Thoughts
-
-### About Unity 
-- Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in shared projects.
-
-### About Assembly Definition Files
-- The use of assembly definition files must be still evaluated!
-- One major question to answer is, if assembly definition files should be shared or not. Right now, I would say yes. Not sharing them should not bring any advantages. And modifying or replacing them would result in maintaining another branch for each submodule.
-- Important note:
-> It is highly recommended that you use assembly definition files for all the scripts in the Project, or not at all. Otherwise, the scripts that are not using assembly definition files always recompile every time an assembly definition file recompiles. This reduces the benefit of using assembly definition files.
->
-> &mdash; <cite>[docs.unity3d.com](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html)</cite>
