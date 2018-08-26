@@ -1,30 +1,32 @@
-REM Example: scripting\add-submodule https://github.com/lars-wobus/unity-sample-project unity-sample-project
+@ECHO OFF
+::Example: scripting\add-submodule https://github.com/lars-wobus/unity-sample-project unity-sample-project
 
-call %~dp0\config.bat
+:: Extract %SubmodulesPath% from config
+CALL %~dp0\config.bat
 
+:: Save input arguments
 SET GitRepository=%1
-SET ProjectName=%2
+SET ProjectName=""
 
-IF [%GitRepository%] == [] GOTO :missingRepository
-IF [%ProjectName%] == [] GOTO :missingProjectName
+:: Check if arguments are set
+IF [%GitRepository%] == [] GOTO :MissingArgumentException
+::IF [%ProjectName%] == [] CALL :MissingArgumentException "Second argument must define a project name. For instance: unity-sample-project".
 
-SET CurrentDirectory=%cd%
-CD /D %SubmodulesRoot%
+CALL :ExtractFilename %GitRepository% %ProjectName
 
-git submodule add %GitRepository% %ProjectName%
+@ECHO ON
 
-CD /D %CurrentDirectory%
+:: Add submodule
+git submodule add %GitRepository% %SubmodulesPath%/%ProjectName%
 
-
+:: End on successful execution
 GOTO :EOF
 
-
-
-
-:missingRepository
-ECHO "Missing repository. E.g.: https://github.com/lars-wobus/unity-sample-project"
+:: End on failure
+:MissingArgumentException
+ECHO Missing argument! First argument must define a repository. For instance: https://github.com/lars-wobus/unity-sample-project
 GOTO :EOF
 
-:missingProjectName
-ECHO "Missing project name. E.g.: unity-sample-project"
+:ExtractFilename
+SET %2=%~nx1
 GOTO :EOF

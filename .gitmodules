@@ -1,6 +1,0 @@
-[submodule "submodules/unity-sample-project"]
-	path = submodules/unity-sample-project
-	url = https://github.com/lars-wobus/unity-sample-project
-[submodule "submodules/unity-sample-project-2"]
-	path = submodules/unity-sample-project-2
-	url = https://github.com/lars-wobus/unity-sample-project
