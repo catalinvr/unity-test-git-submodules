@@ -35,8 +35,4 @@ The proposed workflow can be summarized into four steps:
 ## Result
 After executing step 1 and 2, users are enabled to checkout submodules and modify files within other projects. The obtained project structure should look similar to this:
 
-```diff
-- The image below propose to use of symlinks. Instead use shortcuts on Windows. Shortcuts should be availabel since Windows Vista.
-```
-
 ![Achieved project structure](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/res/umlet/final-directory-structure.png)
