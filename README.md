@@ -35,8 +35,6 @@ The proposed workflow can be summarized into four steps:
 ## Observations
 [Github for Unity](https://unity.github.com/) shows local changes in submodules, but neither committing nor pushing files inside submodules is possible in version 1.0.0 and version 1.0.2. Additional note: Stashing files via the editor window does not seem to be supported. Unfortunately pulling from remote is only possible when everything which has changed was committed or reverted. That means working in teams on the same branch plus committing subsets of changed files becomes more difficult.
 
-Repositories can be added multiple times as submodules with different names. So working with multiple branches at once, seems to be possible. But linking folders into the Assets folder becomes more difficult. There are much more situations for collisions, e.g. occurence of scripts with the same name and the same namespace.
-
 ## Result
 After executing step 1 and 2, users are enabled to checkout submodules and modify files within other projects. The obtained project structure should look similar to this:
 
@@ -50,16 +48,6 @@ After executing step 1 and 2, users are enabled to checkout submodules and modif
 
 ### About Unity 
 - Unity might display some warnings mentioning that GUIDs are already in use. One consequence of that behaviour could be frequent updates of .meta files in shared projects.
-
-### About Git
-- Git does not add empty folders, but Unity adds a .meta file for each folder on creation. When other team members are checking out the repository for the first time, Unity will complain about .meta files having no relation to any existing folder. Cause there are so many possible situations were users create empty folders, I think each folder within Assets should get its own .keep file right from the beginning. 
-
-- .gitignore requires forward slashes But the provided batch files require paths containing backslashes. To convert strings, one can use the following command: 
-```batch
-SET MyVar=%MyVar:\=/%
-```
-
-- When adding a submodule, it might be a wise choice to create another branch in that submodule, named after the project using the submodule. This should become in handy, when submodules were created in the past when another version of Unity was in use. If both projects are still maintained, merging files from the master branch into the newly created branch, seems to be the safest way to integrate new features.
 
 ### About Assembly Definition Files
 - The use of assembly definition files must be still evaluated!
