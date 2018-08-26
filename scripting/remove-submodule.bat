@@ -3,7 +3,7 @@
 CALL %~dp0\config.bat
 
 SET GitSubmodule=%1
-SET PathWithBackslash=%SubmodulesFoldername%\%GitSubmodule%
+SET PathWithBackslash=%SubmodulePath%\%GitSubmodule%
 SET PathWithSlash=%PathWithBackslash:\=/%
 
 :: Remove the submodule entry from .git/config
