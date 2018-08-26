@@ -1,4 +1,4 @@
-REM Example scripting\unlink-submodule DummyProject\Assets\com.company.product_2
+:: Example scripting\unlink-submodule DummyProject\Assets\com.company.product
 SET SymlinkTarget=%1
 
 IF [%SymlinkTarget%] == [] GOTO :missingTarget
@@ -6,10 +6,10 @@ IF [%SymlinkTarget%] == [] GOTO :missingTarget
 rmdir %SymlinkTarget%
 del %SymlinkTarget%.meta
 
-call %~dp0\config.bat
+CALL %~dp0\config.bat
 
 SET SymlinkTarget=%SymlinkTarget:\=/%
-type %GitignoreFile% | find /v "%SymlinkTarget%/*" | find /v "%SymlinkTarget%/.keep" > %GitignoreFile%
+type %GitignoreFile% | find /v "%SymlinkTarget%/*" | find /v "!%SymlinkTarget%/.keep" > %GitignoreFile%
 
 GOTO :EOF
 

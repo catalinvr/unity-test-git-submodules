@@ -1,5 +1,5 @@
 REM Open cmd as administrator
-REM Example: scripting\symlink-submodule submodules\unity-sample-project\SampleProject\Assets\com.company.product DummyProject\Assets\com.company.product_2
+REM Example: scripting\symlink-submodule submodules\unity-sample-project\SampleProject\Assets\com.company.product DummyProject\Assets\com.company.product
 
 @ECHO off
 
@@ -9,9 +9,8 @@ SET SubmoduleTarget=%2
 IF [%SubmoduleSource%] == [] GOTO :missingSource
 IF [%SubmoduleTarget%] == [] GOTO :missingTarget
 
-REM mklink /J DummyProject\Assets\com.company.product_2 submodules\unity-sample-project\SampleProject\Assets\com.company.product
 mklink /J %SubmoduleTarget% %SubmoduleSource%
-call :updateGitignoreFile %SubmoduleTarget%
+CALL :updateGitignoreFile %SubmoduleTarget%
 
 GOTO :EOF
 
@@ -26,13 +25,13 @@ ECHO "Target undefined"
 GOTO :EOF
 
 :updateGitignoreFile
-call %~dp0\config.bat
-call :ignoreAllFilesButKeepDirectory %1
+CALL %~dp0\config.bat
+CALL :ignoreAllFilesButKeepDirectory %1
 GOTO :EOF
 
 :ignoreAllFilesButKeepDirectory
-call :createKeepFile %1
-call :ignoreFilesInDirectory %1
+CALL :createKeepFile %1
+CALL :ignoreFilesInDirectory %1
 GOTO :EOF
 
 :createKeepFile
@@ -43,7 +42,7 @@ GOTO :EOF
 ECHO %GitignoreFile%
 SET FILEPATH=%1
 SET Filename=""
-call :extractFilename %FILEPATH% %Filename
+CALL :extractFilename %FILEPATH% %Filename
 FINDSTR %Filename% %GitignoreFile%
 IF %errorlevel% EQU 0 GOTO :EOF 
 
