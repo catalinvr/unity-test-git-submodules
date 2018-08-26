@@ -31,9 +31,6 @@ The proposed workflow can be summarized into four steps:
     - remove submodule (including .keep file)
     - update .git/modules/submodules folder
     - update .gitmodules file
-    
-## Observations
-[Github for Unity](https://unity.github.com/) shows local changes in submodules, but neither committing nor pushing files inside submodules is possible in version 1.0.0 and version 1.0.2. Additional note: Stashing files via the editor window does not seem to be supported. Unfortunately pulling from remote is only possible when everything which has changed was committed or reverted. That means working in teams on the same branch plus committing subsets of changed files becomes more difficult.
 
 ## Result
 After executing step 1 and 2, users are enabled to checkout submodules and modify files within other projects. The obtained project structure should look similar to this:
