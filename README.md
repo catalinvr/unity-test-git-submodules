@@ -12,6 +12,8 @@ Repository to evaluate strategies in terms of sharing code by using git submodul
 ## Abstract
 Git submodules allow sharing files between projects. But using them in Unity projects, requires some preliminary steps. The proposed solution uses symlinks (and probably shortcuts someday) to link folders into the Assets folder. Simultaneously it makes sure that gitignore files are kept up-to-date over the entire lifetime of the project.
 
+For more details check the [wiki](https://github.com/lars-wobus/unity-test-git-submodules/wiki).
+
 ## Workflow
 
 ![State machine describing workflow for creating new repositories containing submodules](https://github.com/lars-wobus/unity-test-git-submodules/blob/master/res/umlet/workflow-1.png)
