@@ -1,4 +1,4 @@
-REM Example: scripting\add-tag unity-sample-project DummyProject 2018.2.4f1
+REM Example: scripting\branch-off unity-sample-project DummyProject 2018.2.4f1
 
 SET Submodule=submodules\%1
 SET Project=%2
@@ -13,6 +13,7 @@ CD %Submodule%
 git checkout -b %Branch%
 git tag -a %TAG% -m %Message%
 git push --set-upstream origin %Branch%
+git push
 git push origin %TAG%
 
 CD %CurrentDirectory%
