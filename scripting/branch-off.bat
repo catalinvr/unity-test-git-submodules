@@ -9,20 +9,29 @@ SET Branch=submodule-%Project%
 :: Try to change directory
 SET CurrentDirectory=%cd%
 CD %Submodule%
-IF %errorlevel% EQU 1 GOTO :missingDirectory
+IF %errorlevel% EQU 1 GOTO :EOF
 
-:: On success, create new branch with tag and upload it to remote repository
+:: Try to checkout new branch
 git checkout -b %Branch%
+IF %errorlevel% EQU 1 GOTO :EOF
+
+:: Try to tag local branch
 git tag -a %TAG% -m %Message%
+IF %errorlevel% EQU 1 GOTO :EOF
+
+:: Try to connect with remote repository
 git push --set-upstream origin %Branch%
+IF %errorlevel% EQU 1 GOTO :EOF
+
+:: Publish new branch in remote repository
 git push
+IF %errorlevel% EQU 1 GOTO :EOF
+
+:: Publish tag
 git push origin %TAG%
+IF %errorlevel% EQU 1 GOTO :EOF
 
 CD %CurrentDirectory%
+ECHO Branching was successful
 
-GOTO :EOF
-
-
-:missingDirectory
-ECHO Submodule not found: %Submodule%
 GOTO :EOF
