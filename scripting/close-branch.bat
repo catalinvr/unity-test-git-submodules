@@ -1,4 +1,4 @@
-REM Example: scripting\branch-off unity-sample-project DummyProject 2018.2.4f1
+REM Example: scripting\close-branch unity-sample-project DummyProject 2018.2.4f1
 
 SET Submodule=submodules\%1
 SET Project=%2
@@ -9,7 +9,8 @@ SET Branch=submodule-%Project%
 SET CurrentDirectory=%cd%
 
 CD %Submodule%
-
+IF %errorlevel% EQU 1 GOTO :missingDirectory
+REM hallo welt
 git tag -a %TAG% -m %Message%
 git push --tags
 
@@ -25,3 +26,7 @@ git checkout master
 git branch -d %1
 git push origin :%1
 GOTO :EOF
+
+:missingDirectory
+GOTO :EOF
+
