@@ -24,9 +24,9 @@ root
 			Streaming Assets
 		Library
 		obj
+		Packages
 		ProjectSettings
 		Temp
-		UnityPackageManager
 		Assembly-CSharp.csproj
 		DummyProject.sln
 	submodules
@@ -39,8 +39,8 @@ root
 					Plugins
 					Standard Assets
 					Streaming Assets
+				Packages
 				ProjectSettings
-				UnityPackageManager
 			.git
 			.gitignore
 			...
