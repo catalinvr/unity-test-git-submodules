@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>13</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLHierarchy</id>
     <coordinates>
-      <x>260</x>
+      <x>0</x>
       <y>0</y>
-      <w>650</w>
-      <h>1560</h>
+      <w>400</w>
+      <h>960</h>
     </coordinates>
     <panel_attributes>type=Package
 root
@@ -52,10 +52,10 @@ root
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>689</x>
-      <y>273</y>
-      <w>143</w>
-      <h>728</h>
+      <x>264</x>
+      <y>168</y>
+      <w>88</w>
+      <h>448</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 symlink</panel_attributes>
@@ -64,10 +64,10 @@ symlink</panel_attributes>
   <element>
     <id>UMLHierarchy</id>
     <coordinates>
-      <x>975</x>
+      <x>440</x>
       <y>0</y>
-      <w>650</w>
-      <h>1274</h>
+      <w>400</w>
+      <h>784</h>
     </coordinates>
     <panel_attributes>type=Package
 Assets
@@ -105,10 +105,10 @@ Assets
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1937</x>
-      <y>104</y>
-      <w>520</w>
-      <h>78</h>
+      <x>1032</x>
+      <y>64</y>
+      <w>320</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>valign=top
 halign=left
@@ -121,10 +121,10 @@ group=1</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1937</x>
-      <y>221</y>
-      <w>520</w>
-      <h>52</h>
+      <x>1032</x>
+      <y>136</y>
+      <w>320</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>valign=top
 halign=left
@@ -136,10 +136,10 @@ group=1</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1937</x>
-      <y>585</y>
-      <w>520</w>
-      <h>117</h>
+      <x>1032</x>
+      <y>360</y>
+      <w>320</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>valign=top
 halign=left
@@ -154,10 +154,10 @@ group=1</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1937</x>
-      <y>741</y>
-      <w>520</w>
-      <h>143</h>
+      <x>1032</x>
+      <y>456</y>
+      <w>320</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>valign=top
 halign=left
@@ -173,10 +173,10 @@ group=1</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1937</x>
-      <y>312</y>
-      <w>520</w>
-      <h>117</h>
+      <x>1032</x>
+      <y>192</y>
+      <w>320</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>valign=top
 halign=left
@@ -191,10 +191,10 @@ group=1</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1937</x>
-      <y>468</y>
-      <w>520</w>
-      <h>78</h>
+      <x>1032</x>
+      <y>288</y>
+      <w>320</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>valign=top
 halign=left
@@ -207,28 +207,27 @@ group=1</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1937</x>
-      <y>923</y>
-      <w>520</w>
-      <h>117</h>
+      <x>1032</x>
+      <y>568</y>
+      <w>320</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>valign=top
 halign=left
-Add Shortcuts
-- inside Windows Explorer navigate into Assets folder
-- press right mouse button
-- create new shortcut pointing to selected folder in submodule
-- commit and push changes 
+Add Symlinks
+- command: mklink /J &lt;destination&gt; &lt;source&gt;
+- update gitignore
+
 group=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>2171</x>
-      <y>39</y>
-      <w>26</w>
-      <h>26</h>
+      <x>1176</x>
+      <y>24</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>type=initial
 group=1</panel_attributes>
@@ -237,10 +236,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>52</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>32</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -249,10 +248,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>169</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>104</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -261,10 +260,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>260</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>160</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -273,10 +272,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>416</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>256</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -285,10 +284,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>533</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>328</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -297,10 +296,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>689</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>424</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -309,10 +308,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>871</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>536</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -321,10 +320,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>1027</y>
-      <w>39</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>704</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 group=1</panel_attributes>
@@ -333,10 +332,10 @@ group=1</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>2158</x>
-      <y>1079</y>
-      <w>52</w>
-      <h>52</h>
+      <x>1168</x>
+      <y>736</y>
+      <w>32</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>type=decision
 group=1</panel_attributes>
@@ -345,10 +344,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2171</x>
-      <y>1118</y>
-      <w>273</w>
-      <h>78</h>
+      <x>1176</x>
+      <y>760</y>
+      <w>168</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 all dependencies are resolved
@@ -358,10 +357,10 @@ group=1</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>2171</x>
-      <y>1170</y>
-      <w>26</w>
-      <h>26</h>
+      <x>1176</x>
+      <y>792</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>type=final
 group=1</panel_attributes>
@@ -370,10 +369,10 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2197</x>
-      <y>806</y>
-      <w>429</w>
-      <h>325</h>
+      <x>1192</x>
+      <y>496</y>
+      <w>264</w>
+      <h>272</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 more
@@ -382,15 +381,15 @@ must
 be 
 resolved
 group=1</panel_attributes>
-    <additional_attributes>10.0;230.0;230.0;230.0;230.0;10.0;200.0;10.0</additional_attributes>
+    <additional_attributes>10.0;320.0;230.0;320.0;230.0;10.0;200.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1755</x>
-      <y>13</y>
-      <w>884</w>
-      <h>1222</h>
+      <x>920</x>
+      <y>8</y>
+      <w>544</w>
+      <h>824</h>
     </coordinates>
     <panel_attributes>fg=white
 group=1</panel_attributes>
@@ -399,14 +398,44 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>689</x>
-      <y>260</y>
-      <w>234</w>
-      <h>754</h>
+      <x>264</x>
+      <y>160</y>
+      <w>144</w>
+      <h>464</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 windows
 shortcut</panel_attributes>
     <additional_attributes>30.0;560.0;110.0;560.0;110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1032</x>
+      <y>640</y>
+      <w>320</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+[Optional] Add Shortcuts
+- inside Windows Explorer navigate into Assets folder
+- press right mouse button
+- create new shortcut pointing to selected folder in submodule
+- commit and push changes 
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>608</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
 </diagram>
